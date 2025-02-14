@@ -7,6 +7,7 @@ function App() {
   const[darkBtn, setDarkbtn] = useState('active')
   const[lightBtn, setLightBtn] = useState('not-active')
   const[url, setUrl] = useState('')
+  const key = process.env.API_KEY;
 
   const lightTheme = ()=>{
     setTheme('main-light')
@@ -24,7 +25,7 @@ function App() {
       const response = await fetch(`https://instagram-scrapper-posts-reels-stories-downloader.p.rapidapi.com/${url}`,{
         method:'GET',
         headers:{
-          'x-rapidapi-key':'60864f912bmshe9deecdd6202d52p1b1e7bjsn6a5d9f1f04fb',
+          'x-rapidapi-key':{key},
           'x-rapidapi-host':'instagram-scrapper-posts-reels-stories-downloader.p.rapidapi.com'
         }
       })
